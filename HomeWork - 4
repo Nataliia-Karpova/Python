@@ -1,0 +1,98 @@
+# Создайте пустой список, добавьте к нему несколько элементов разных типов,
+# увеличьте его с помощью другого списка, удалите из него какие-то из элементов,
+# задайте элемент с индексом 1 равным 10, посчитайте сколько раз определённый элемент
+# присутствует в вашем списке, найдите длину списка
+List1 = [] # Создать простой список
+List1.append(1)
+List1.append("World")
+List1.append(True) #Добавляю в list элементы разных типов
+print(List1) # Проверяю добавились ли элементы в список
+print(type(List1[0])) #Проверяю элементы каких типов добавились в список
+print(type(List1[1]))
+print(type(List1[2]))
+List1.extend(List2) # Добавила к List1 List2
+List1.pop(1) #Удаляю всё, кроме цифр
+List1.pop(1)
+List1.pop(1)
+print(List1)
+List1.pop(2)
+print(List1)
+List1[1] = 10 # Меняю 1 элемента на 10
+print(List1)
+print(List1.count(1)) # Смотрю число 1 в листе
+print(len(List1)) #  Определяю длинну списка
+
+Сделайте то же самое (что возможно) с кортежем
+# Кортежи
+Tuble1 = () # Создаю новый пустой кортеж
+print(type(Tuble1))
+# В кортеже мы не можем изменять элементы -> не можем добавить элементы, только преобразовав в list или создав новый кортеж
+Tuble2 = (1,2,3)
+Tuble1 = list(Tuble1)
+print(type(Tuble1)) # Далее можно работать как с листом
+print(Tuble2.count(1)) # Но мы можем посчитать сколько раз встречается 1
+print(len(Tuble2)) # Можем узнать длинну кортежа
+
+# Напишите программу, приветствующую всех друзей из коллекции друзей
+# (задайте её в переменную сами), а потом печатающую 'Hi, everyone!':
+Friends = ['Asya', 'Lena', 'Alex', 'Max' , 'Vera']
+for friend in Friends:
+    print("Hi, " + friend)
+print('Hi, everyone!')
+# Напишите программу, поэлементно складывающую две последовательные коллекции
+# (заданных вами) одного размера:
+list1 = [1, 2, 3]
+list2 = [-3, 3, 13]
+list_sum = [] # Новый лист в который запишем результат
+count = 0 # счетчик с помощью которого переберем переменные в list2
+for i in list1: # Проходимся по всем элементам списка 1
+    element = i + list2[count]
+    list_sum.insert(count, element) # Вставляем в list_sum полученные значения
+    count += 1 # Идем к следующему элементу list2
+print(list_sum)
+
+# Создайте программу, принимающую 3 числа, соответствующих длинам сторон треугольника,
+# и выводящую его тип (равнобедренный, разносторонний, равносторонний)
+a = int(input('Длина стороны треугольника: '))
+b = int(input('Длина стороны треугольника: '))
+c = int(input('Длина стороны треугольника: '))
+if a == b == c:
+    print('Равносторонний')
+elif (a == b and a != c) or (a == c and a != b) or (b == c and a != c):
+    print('Равнобедренный')
+else:
+    print('Разносторонний')
+# Разверните лист всеми известными вам способами
+# Способ 1
+elements = [1, 2, ('fruit', 5)]
+elements.reverse()
+print(elements)
+# Способ 2
+elements = [1, 2, ('fruit', 5)]
+elements[::-1]
+print(elements)
+# Способ 3
+elements = [1, 2, ('fruit', 5)]
+elements.insert(0,elements.pop())
+elements.insert(1,elements.pop())
+print(elements)
+# Способ 4
+elements = [1, 2, ('fruit', 5)]
+n = 0
+import copy
+elements2 = copy.deepcopy(elements[1:2])
+elements.insert(0, elements2[0])
+elements.pop(2)
+elements2 = copy.deepcopy(elements[0:2])
+elements.pop(0)
+elements.pop(0)
+elements.insert(1, elements2[0])
+elements.insert(2, elements2[1])
+print(elements)
+# Теперь напишите программу, отбирающую из коллекции чисел только чётные, а затем считающая их сумму
+interesting_numbers = (3, 2, 5, 7, 14, 26, 32, 31, 37)
+count = 0
+for element in interesting_numbers:
+    if element % 2 == 0:
+        count += element
+print(count)
