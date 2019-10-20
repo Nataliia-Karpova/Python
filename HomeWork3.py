@@ -13,7 +13,6 @@ while n < 5:
     number1 = int(float(input('Введите дробное число')))
     print(number1)
     n += 1
-    n += 1
 # Целое число в строку
 n = 0
 while n < 5:
