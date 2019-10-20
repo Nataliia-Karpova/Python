@@ -75,9 +75,7 @@ while n < 5:
         summ += test
         n += 1
     else:
-        while 0 >= test >= 6:
-            print('Некорректное число ')
-            test = int(input('Введите оценку за тест от 1 до 5 '))
+        print('Некорректное число ')
 mean = (summ / 5)
 print('Средняя оценка', mean)
 # Подсчет кол-ва деталей, выпускаемых на заводе за единицу времени на х станках
@@ -151,7 +149,7 @@ if number % 15 == 0:
     print('fizzbuzz')
 elif number % 3 == 0:
     print('fizz')
-elif number % 3 != 0 and number % 5 == 0:
+elif number % 5 == 0:
     print('buzz')
-elif number % 3 != 0 and number % 5 != 0:
+else:
     print(number)
