@@ -135,13 +135,18 @@ print(a,b,'   ', operator.xor(a, b))
 print(b,a,'   ', operator.xor(b, a))
 print(b,b,'   ', operator.xor(b, b))
 #Выводим таблицу истинности для a nand b
-a = 0
-b = 1
-print('a','b',' ', 'a nand b')
-print(a,a,'   ',int(not(a and b)))
-print(a,b,'   ',int(not(a and b)))
-print(b,a,'   ',int(not(a and b)))
-print(b,b,'   ',a and b)
+a = int(input('Введите 0 или 1: '))
+b = int(input('Введите другое значение: '))
+while (a != 0 or a != 1) or (b != 0 or b != 1):
+    a = int(input('Введите 0 или 1: '))
+    b = int(input('Введите другое значение: '))
+    if (a == 0 or a == 1) and (b == 0 or b == 1):
+        if a == False or b == False:
+                print('a','b',' ', 'a nand b')
+                print(a,a,'   ',int(not(a and b)))
+                print(a,b,'   ',(a and b))
+                print(b,a,'   ',(a and b))
+                print(b,b,'   ',(a and b))
 # fizzbuzz - сделайте программу, на вход которой поступает целое число, если это число делится на 3 выводится fizz,
 # Если на 5 - buzz, а если на 15 - fizzbuzz.
 # Если не делится нацело ни на одно из них, выведите это же число
