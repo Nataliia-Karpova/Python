@@ -45,7 +45,7 @@ list_sum = []  # Новый лист в который запишем резул
 count = 0  # счетчик с помощью которого переберем переменные в list2
 for i in list1:  # Проходимся по всем элементам списка 1
     element = i + list2[count]
-    list_sum.insert(count, element)  # Вставляем в list_sum полученные значения
+    list_sum.append(count, element)  # Вставляем в list_sum полученные значения
     count += 1  # Идем к следующему элементу list2
 print(list_sum)
 
@@ -54,12 +54,15 @@ print(list_sum)
 a = int(input('Длина стороны треугольника: '))
 b = int(input('Длина стороны треугольника: '))
 c = int(input('Длина стороны треугольника: '))
-if a == b == c:
-    print('Равносторонний')
-elif (a == b and a != c) or (a == c and a != b) or (b == c and a != c):
-    print('Равнобедренный')
+if a + b > c and a + c > b and c + b > a:    # Проверка на треугольность
+    if a == b == c:
+        print('Равносторонний')
+    elif (a == b ) or (a == c ) or (b == c ):
+        print('Равнобедренный')
+    else:
+        print('Разносторонний')
 else:
-    print('Разносторонний')
+    print('Это не треугольник!')
 # Разверните лист всеми известными вам способами
 # Способ 1
 elements = [1, 2, ('fruit', 5)]
