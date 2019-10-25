@@ -79,8 +79,16 @@ elements = [1, 2, ('fruit', 5)]
 elements.insert(0, elements.pop())
 elements.insert(1, elements.pop())
 print(elements)
-# Способ 4 - идея в том, чтобы копировать определенные элементы и удалять их после копирования пока
-# не придем к их нужному расположению в листе
+
+# Способ 4 (Добавим в вариант 3 цикл)
+
+elements = [1, 2, ('fruit', 5)]
+for i in range(len(elements)-1):
+    elements.insert(i, elements.pop())
+print(elements)
+
+# Способ 5 - идея в том, чтобы копировать отедельные элементы и удалять их после копирования пока
+# не придем к их нужному расположению в листе. Да способ только для данного набора элементов, сложный и муторный)
 elements = [1, 2, ('fruit', 5)]
 n = 0
 import copy
@@ -95,10 +103,11 @@ elements.insert(1, elements2[0])
 elements.insert(2, elements2[1])
 print(elements)
 
+
 # Теперь напишите программу, отбирающую из коллекции чисел только чётные, а затем считающая их сумму
 interesting_numbers = (3, 2, 5, 7, 14, 26, 32, 31, 37)
-count = 0
+summ = 0
 for element in interesting_numbers:
     if element % 2 == 0:
-        count += element
-print(count)
+        summ += element
+print(summ)
