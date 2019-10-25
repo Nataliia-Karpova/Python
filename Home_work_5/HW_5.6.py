@@ -14,7 +14,6 @@ print(set(For_convertation))
 
 # Из листа в строку, кортеж и set
 
-
 For_convertation = list(input("Введите лист для преобразования в строку:"))
 print(str(For_convertation))
 
