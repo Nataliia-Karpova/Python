@@ -20,7 +20,7 @@ for month in months.items():
 
 months = {'Dec': 'winter', 'Jan': 'winter', 'Feb': 'winter', 'March': 'spring', 'April': 'spring', 'May': 'spring', 'June': 'summer', 'July': 'summer', 'Aug': 'summer', 'Sep': 'autumn', 'Oct': 'autumn', 'Nov': 'autumn'}
 for month in months:
-    print(month, '->', months[month])
+    print(month, months[month])
 
 # Способ 3 Итерация через .keys()
 
