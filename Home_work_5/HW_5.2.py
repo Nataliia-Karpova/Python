@@ -2,7 +2,7 @@
 # обратитесь к нескольким элементам и сделайте с ними какое-нибудь действие
 months = dict()
 print(type(months))
-months_2 = ()
+months_2 = {}
 print(type(months_2)) # Создаю пустой словарь
 
 months["Dec"] = "winter"
@@ -52,3 +52,4 @@ print(months.pop("Feb"))
 
 print(months.popitem("Feb"))
 
+months["Feb"] = months["Feb"].upper() # все буквы в Feb станут заглавными FEB
